@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vision Classroom - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+    <div id="app" class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="bg-dark text-white">
+            <div class="sidebar-header p-3 border-bottom border-secondary">
+                <div class="d-flex align-items-center">
+                    <img src="../assets/img/logo.png" alt="Logo" class="logo me-2" width="40">
+                    <div>
+                        <h5 class="mb-0">AI Vision</h5>
+                        <small class="text-muted">Classroom Assistant</small>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="list-unstyled components p-3">
+                <li class="active">
+                    <a href="dashboard.html" class="d-flex align-items-center py-2 px-3 rounded">
+                        <i class="bi bi-speedometer2 me-3"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="live-view.html" class="d-flex align-items-center py-2 px-3 rounded">
+                        <i class="bi bi-camera-video me-3"></i>
+                        <span>Live View</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="attendance.html" class="d-flex align-items-center py-2 px-3 rounded">
+                        <i class="bi bi-person-check me-3"></i>
+                        <span>Attendance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="analytics.html" class="d-flex align-items-center py-2 px-3 rounded">
+                        <i class="bi bi-graph-up me-3"></i>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html" class="d-flex align-items-center py-2 px-3 rounded">
+                        <i class="bi bi-gear me-3"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="p-3 mt-auto border-top border-secondary">
+                <div class="d-flex align-items-center">
+                    <div class="avatar bg-primary rounded-circle me-3">
+                        <span>JD</span>
+                    </div>
+                    <div>
+                        <h6 class="mb-0">John Doe</h6>
+                        <small class="text-muted">Instructor</small>
+                    </div>
+                    <div class="ms-auto">
+                        <a href="../index.html" class="btn btn-sm btn-outline-light">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <!-- Top Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-light">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown me-3">
+                            <button class="btn btn-light position-relative" type="button" data-bs-toggle="dropdown">
+                                <i class="bi bi-bell"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    3
+                                </span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><h6 class="dropdown-header">Notifications</h6></li>
+                                <li><a class="dropdown-item" href="#">Low attention detected</a></li>
+                                <li><a class="dropdown-item" href="#">Student left class</a></li>
+                                <li><a class="dropdown-item" href="#">New student detected</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-center" href="#">View all</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-light" type="button" data-bs-toggle="dropdown">
+                                <i class="bi bi-gear"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Help</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="../index.html">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="container-fluid p-4">
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <h2 class="mb-1">Dashboard</h2>
+                        <p class="text-muted">Overview of classroom activities</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="d-flex justify-content-md-end align-items-center">
+                            <div class="me-3">
+                                <select class="form-select">
+                                    <option>Class A - Room 101</option>
+                                    <option>Class B - Room 102</option>
+                                    <option>Class C - Room 103</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary">
+                                <i class="bi bi-play-fill me-2"></i>Start Session
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="icon-box bg-primary-subtle text-primary rounded p-3 me-3">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-muted mb-1">Students Present</h6>
+                                        <h3 class="mb-0">24/28</h3>
+                                    </div>
+                                </div>
+                                <div class="progress" style="height: 5px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="icon-box bg-success-subtle text-success rounded p-3 me-3">
+                                        <i class="bi bi-graph-up"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-muted mb-1">Avg. Engagement</h6>
+                                        <h3 class="mb-0">76%</h3>
+                                    </div>
+                                </div>
+                                <div class="progress" style="height: 5px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 76%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="icon-box bg-warning-subtle text-warning rounded p-3 me-3">
+                                        <i class="bi bi-hand-index-thumb"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-muted mb-1">Hand Raises</h6>
+                                        <h3 class="mb-0">12</h3>
+                                    </div>
+                                </div>
+                                <div class="progress" style="height: 5px;">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 42%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="icon-box bg-info-subtle text-info rounded p-3 me-3">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-muted mb-1">Session Duration</h6>
+                                        <h3 class="mb-0">45:22</h3>
+                                    </div>
+                                </div>
+                                <div class="progress" style="height: 5px;">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 62%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <!-- Live Camera Feed -->
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Live Camera Feed</h5>
+                                <div>
+                                    <button class="btn btn-sm btn-outline-secondary me-2">
+                                        <i class="bi bi-camera"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-secondary">
+                                        <i class="bi bi-fullscreen"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="camera-feed position-relative">
+                                    <img src="https://via.placeholder.com/800x400" class="img-fluid w-100" alt="Camera Feed">
+                                    <div class="camera-overlay">
+                                        <div class="detection-box" style="top: 20%; left: 30%; width: 10%; height: 15%;">
+                                            <div class="detection-label">Student #12</div>
+                                        </div>
+                                        <div class="detection-box" style="top: 25%; left: 50%; width: 10%; height: 15%;">
+                                            <div class="detection-label">Student #7</div>
+                                        </div>
+                                        <div class="detection-box" style="top: 60%; left: 70%; width: 10%; height: 15%;">
+                                            <div class="detection-label">Student #19</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white d-flex justify-content-between">
+                                <div>
+                                    <span class="badge bg-success me-2">Detection Active</span>
+                                    <span class="text-muted small">24 students detected</span>
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-primary">Full View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Engagement & Alerts -->
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-header bg-white">
+                                <h5 class="mb-0">Engagement Levels</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="engagementChart" height="200"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Recent Alerts</h5>
+                                <button class="btn btn-sm btn-outline-secondary">View All</button>
+                            </div>
+                            <div class="card-body p-0">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex align-items-center px-3 py-3">
+                                        <div class="icon-box bg-warning-subtle text-warning rounded p-2 me-3">
+                                            <i class="bi bi-exclamation-triangle"></i>
+                                        </div>
+                                        <div>
+                                            <p class="mb-0">Low attention detected in back row</p>
+                                            <small class="text-muted">2 minutes ago</small>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center px-3 py-3">
+                                        <div class="icon-box bg-info-subtle text-info rounded p-2 me-3">
+                                            <i class="bi bi-person-dash"></i>
+                                        </div>
+                                        <div>
+                                            <p class="mb-0">Student #15 left the classroom</p>
+                                            <small class="text-muted">5 minutes ago</small>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center px-3 py-3">
+                                        <div class="icon-box bg-success-subtle text-success rounded p-2 me-3">
+                                            <i class="bi bi-hand-index-thumb"></i>
+                                        </div>
+                                        <div>
+                                            <p class="mb-0">Hand raised by Student #7</p>
+                                            <small class="text-muted">8 minutes ago</small>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attendance Table -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Attendance Overview</h5>
+                                <button class="btn btn-sm btn-primary">Export Data</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Student ID</th>
+                                                <th>Name</th>
+                                                <th>Status</th>
+                                                <th>Entry Time</th>
+                                                <th>Engagement</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#001</td>
+                                                <td>John Smith</td>
+                                                <td><span class="badge bg-success">Present</span></td>
+                                                <td>09:05 AM</td>
+                                                <td>
+                                                    <div class="progress" style="height: 6px;">
+                                                        <div class="progress-bar bg-success" role="progressbar" style="width: 85%"></div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-secondary">Details</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#002</td>
+                                                <td>Jane Doe</td>
+                                                <td><span class="badge bg-success">Present</span></td>
+                                                <td>08:58 AM</td>
+                                                <td>
+                                                    <div class="progress" style="height: 6px;">
+                                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 65%"></div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-secondary">Details</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#003</td>
+                                                <td>David Johnson</td>
+                                                <td><span class="badge bg-danger">Absent</span></td>
+                                                <td>--:--</td>
+                                                <td>
+                                                    <div class="progress" style="height: 6px;">
+                                                        <div class="progress-bar bg-secondary" role="progressbar" style="width: 0%"></div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-secondary">Details</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#004</td>
+                                                <td>Maria Garcia</td>
+                                                <td><span class="badge bg-warning">Late</span></td>
+                                                <td>09:22 AM</td>
+                                                <td>
+                                                    <div class="progress" style="height: 6px;">
+                                                        <div class="progress-bar bg-success" role="progressbar" style="width: 90%"></div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-secondary">Details</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#005</td>
+                                                <td>Robert Chen</td>
+                                                <td><span class="badge bg-success">Present</span></td>
+                                                <td>09:01 AM</td>
+                                                <td>
+                                                    <div class="progress" style="height: 6px;">
+                                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 45%"></div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-secondary">Details</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white text-center">
+                                <nav>
+                                    <ul class="pagination justify-content-center mb-0">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#">Previous</a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.36/dist/vue.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script>
+        // Toggle sidebar
+        document.getElementById('sidebarCollapse').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('content').classList.toggle('active');
+        });
+        
+        // Chart for engagement levels
+        const ctx = document.getElementById('engagementChart').getContext('2d');
+        const engagementChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['09:00', '09:10', '09:20', '09:30', '09:40', '09:50'],
+                datasets: [{
+                    label: 'Engagement %',
+                    data: [65, 72, 78, 69, 75, 76],
+                    borderColor: '#0d6efd',
+                    backgroundColor: 'rgba(13, 110, 253, 0.1)',
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
