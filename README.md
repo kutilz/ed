@@ -4,7 +4,7 @@
 
 ## Overview
 
-AI Vision Classroom Assistant adalah perangkat berbasis NVIDIA Jetson Nano yang memanfaatkan computer vision dan AI untuk membantu pengajar dalam mengelola dan menganalisis dinamika kelas secara real-time. Sistem ini mampu mendeteksi kehadiran, gerakan, ekspresi, dan tingkat keterlibatan siswa menggunakan kamera yang dipasang di depan kelas.
+EduVision adalah perangkat berbasis NVIDIA Jetson Nano yang memanfaatkan computer vision dan AI untuk membantu pengajar dalam mengelola dan menganalisis dinamika kelas secara real-time. Sistem ini mampu mendeteksi kehadiran, gerakan, ekspresi, dan tingkat keterlibatan siswa menggunakan kamera yang dipasang di depan kelas.
 
 $
 
